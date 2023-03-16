@@ -9,43 +9,55 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import pageObject.signup;
 
 public class signupSteps extends Config {
+    signup sp = new signup(driver);
     @Given("User in TalentTek Homepage")
     public void userInTalentTekHomepage() {
-        String title= driver.getTitle();
-        Assert.assertEquals(title,"Sign in");
-
+        String act= driver.getTitle();
+        String exp= "Sign In";
+        Assert.assertEquals(act, exp);
     }
 
     @And("I click on the create new account")
     public void iClickOnTheCreateNewAccount() {
-        driver.findElement(By.xpath("//*[@id='wrap']/div/div/div/a")).click();
+
+        //driver.findElement(By.xpath("//*[@id='wrap']/div/div/div/a")).click();
+        sp.clickCreateNewAccountButton();
+    }
+    @And("user should be on TalentTek signup page")
+    public void userShouldBeOnTalentTekSignupPage(){
+        sp.verifyIfUserOnSignupPage();
     }
 
-    @When("User enter first name")
-    public void userEnterFirstName() {
-        driver.findElement(By.name("firstName")).sendKeys("Sana");
+    @When("User enter firstname")
+    public void userEnterFirstname() {
+        //driver.findElement(By.name("firstName")).sendKeys(firstname);
+        sp.enterFirstName(FirstName);
     }
-
-    @And("User enter last name")
-    public void userEnterLastName() {
-        driver.findElement(By.name("lastName")).sendKeys("patel");
+    @And("user enter lastname")
+    public void userEnterLastname() {
+       // driver.findElement(By.name("lastName")).sendKeys(lastname);
+        sp.enterLastName(LastName);
     }
 
     @And("User enter email address")
     public void userEnterEmailAddress() {
-        driver.findElement(By.name("email")).sendKeys("sap113@gmail.com");
+       // driver.findElement(By.name("email")).sendKeys("sap113@gmail.com");
+        sp.enterEmailAddress(Email_Address);
     }
 
     @And("User enter Password")
     public void userEnterPassword() {
-        driver.findElement(By.name("password")).sendKeys("abc123");
+       // driver.findElement(By.name("password")).sendKeys("abc123");
+        sp.enterPassword(Password);
     }
 
     @And("User enter same Password in Confirm Password")
     public void userEnterSamePasswordInConfirmPassword() {
-        driver.findElement(By.name("confirmPassword")).sendKeys("abc123");
+        //driver.findElement(By.name("confirmPassword")).sendKeys("abc123");
+        sp.userEnterConfirmPassword(Password);
     }
 
     @And("User enter Birthdate By month,day,year")
@@ -85,4 +97,8 @@ public class signupSteps extends Config {
     @Then("User should successfully signup brand new account")
     public void userShouldSuccessfullySignupBrandNewAccount() {
     }
+
+
+
+
 }

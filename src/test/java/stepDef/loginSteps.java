@@ -26,7 +26,7 @@ public class loginSteps extends Config {
     }
 
     @And("user enter valid password")
-    public void userEnterValidPassword(String pass) {
+    public void userEnterValidPassword() {
         lp.enterPassword(Password);
 
     }
@@ -38,17 +38,26 @@ public class loginSteps extends Config {
 
     @Then("user should be able to successfully login")
     public void userShouldBeAbleToSuccessfullyLogin() {
+        lp.verifyIfStudentLoggedInSuccessfully();
     }
 
     @And("user enter invalid password")
     public void userEnterInvalidPassword() {
+        lp.enterPassword("invalidPassword");
     }
 
-    @Then("user should be able see {string}")
-    public void userShouldBeAbleSee(String arg0) {
-    }
+
+
 
     @And("user enter invalid email address")
     public void userEnterInvalidEmailAddress() {
+        lp.enterEmailAddress("invalidEmail");
+
+    }
+
+
+    @Then("user should be able see {string}")
+    public void userShouldBeAbleSee(String errorMsg) {
+        lp.verifyErrorMessageForInvalidEmailOrPassword(errorMsg);
     }
 }

@@ -4,6 +4,9 @@ package stepDef;
 import base.Config;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hook extends Config {
     //QA: https://www.qa.taltektc.com
@@ -25,14 +28,14 @@ public class Hook extends Config {
                 Email_Address="qa.spdt1511@gmail.com";
                 Password = "sap123";
                 break;
-            case "stg":
+            case "stage":
                 url = "https://www.stage.taltektc.com";
-                Email_Address="spdt1511@gmail.com";
-                Password = "Dhruv#05";
+                Email_Address="stage.spdt1511@gmail.com";
+                Password = "sap123";
                 break;
             case "prod":
                 url = "https://www.prod.taltektc.com";
-                Email_Address="spdt1511@gmail.com";
+                Email_Address="prod.spdt1511@gmail.com";
                 Password = "Dhruv#05";
                 break;
         }
@@ -41,7 +44,20 @@ public class Hook extends Config {
     }
 
     @After
-    public void aftereachTest(){
+    public void aftereachTest(Scenario scenario){
+        try{
+            if (scenario.isFailed()) {
+
+                final byte[] screenshot= ((TakesScreenshot) driver)
+
+                .getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", "screenshot");
+            }
+
+
+        }finally {
+
+        }
         //driver.quit();
 
     }

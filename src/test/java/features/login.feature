@@ -1,29 +1,31 @@
 Feature: Login Feature
-  @sanity @regression @hb
-  Scenario: user should able to login with valid email and valid password
+  Background:
     Given user should be on TalentTEK homepage
+  @sanity @regression @hb @smoke
+  Scenario: user should able to login with valid email and valid password
+
     And user enter valid email address
     And user enter valid password
     When user clicks on log in button
     Then user should be able to successfully login
-  @smoke @hb @smoke
+   @login @hb @smoke
   Scenario: user should not able to login with valid email and invalid password
-    Given user should be on TalentTEK homepage
+
     And user enter valid email address
     And user enter invalid password
     When user clicks on log in button
-    Then user should be able see "You have entered an incorrect email or student Id."
-
+    Then user should be able see "You have entered an incorrect email or student Id"
+  @smoke
   Scenario: : user should not able to login with invalid email and valid password
-    Given user should be on TalentTEK homepage
+
     And user enter invalid email address
     And user enter valid password
     When user clicks on log in button
-    Then user should be able see "You have entered an incorrect email or student Id."
-
+    Then user should be able see "You have entered an incorrect email or student Id"
+  @smoke
   Scenario: : user should not able to login with invalid email and invalid password
-    Given user should be on TalentTEK homepage
+
     And user enter invalid email address
     And user enter invalid password
     When user clicks on log in button
-    Then user should be able see "You have entered an incorrect email or student Id."
+    Then user should be able see "You have entered an incorrect email or student Id"

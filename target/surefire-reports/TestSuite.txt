@@ -1,10 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.95 s <<< FAILURE! - in TestSuite
-TestRunner.runScenario["user should able to login with valid email and valid password", "Optional[Login Feature]"](1)  Time elapsed: 7.575 s  <<< FAILURE!
-io.cucumber.core.exception.CucumberException: 
-Step [user enter valid password] is defined with 1 parameters at 'stepDef.loginSteps.userEnterValidPassword(java.lang.String)'.
-However, the gherkin step has 0 arguments.
-Step text: user enter valid password
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.453 s - in TestSuite

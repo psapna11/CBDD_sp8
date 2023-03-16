@@ -9,8 +9,6 @@
         <module name="CBDD_sp8" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CBDD_sp7" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="15" />
   </component>
 </project>
