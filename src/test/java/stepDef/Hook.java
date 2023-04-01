@@ -21,17 +21,18 @@ public class Hook extends Config {
 
     @Before
     public void beforeeachTest(){
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         driver = setupBrowser(driverType);
         switch (envType){
             case "qa":
                 url = "https://www.qa.taltektc.com";
-                Email_Address="qa.spdt1511@gmail.com";
-                Password = "sap123";
+                Email_Address="spdt1234@gmail.com";
+                Password = "abc123";
                 break;
             case "stage":
                 url = "https://www.stage.taltektc.com";
-                Email_Address="stage.spdt1511@gmail.com";
-                Password = "sap123";
+                Email_Address="spdt1234@gmail.com";
+                Password = "abc123";
                 break;
             case "prod":
                 url = "https://www.prod.taltektc.com";
@@ -51,7 +52,7 @@ public class Hook extends Config {
                 final byte[] screenshot= ((TakesScreenshot) driver)
 
                 .getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshot, "image/png", "screenshot");
+                scenario.attach(screenshot, "image/png", scenario.getName());
             }
 
 

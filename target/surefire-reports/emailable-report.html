@@ -9,11 +9,40 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">15,869</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">376</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="2">1678938574941</td><td rowspan="2">10834</td></tr><tr class="passedeven"><td><a href="#m1">runScenario</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">TestRunner</td><td><a href="#m0">setUpClass</a></td><td rowspan="1">1680361108478</td><td rowspan="1">297</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;user should able to login with valid email and valid password&quot;</td><td>&quot;Optional[Login Feature]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;user should not able to login with valid email and invalid password&quot;</td><td>&quot;Optional[Login Feature]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Surefire test</h2><h3 id="m0">TestRunner#setUpClass</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@1ada9581</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///C:/Users/panka/git/CBDD_sp8/src/test/java/features/signup.feature
+(3:3): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;Scenario : User should be able to create a new account&apos;
+(4:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;Given user should be on TalentTEK homepage&apos;
+(5:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User click on the &quot;Create new account&quot; button&apos;
+(6:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User enter First and last name&apos;
+(7:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User enter email address&apos;
+(8:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User enter Password and Confirm password&apos;
+(9:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User enter month under Birthdate&apos;
+(10:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User enter date under Birthdate&apos;
+(11:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User enter year under Birthdate&apos;
+(12:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User select Gender as &quot;female&quot;&apos;
+(13:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got &apos;And User select to agree term and condition checkbox&apos;
+	at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:56)
+	at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:46)
+	at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
+	at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:75)
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:60)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2811)
+	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:53)
+	at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
+	at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
+	at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
+	at io.cucumber.core.runtime.FeaturePathFeatureSupplier.loadFeatures(FeaturePathFeatureSupplier.java:62)
+	at io.cucumber.core.runtime.FeaturePathFeatureSupplier.get(FeaturePathFeatureSupplier.java:45)
+	at io.cucumber.testng.TestNGCucumberRunner.&lt;init&gt;(TestNGCucumberRunner.java:122)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:27)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

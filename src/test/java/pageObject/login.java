@@ -2,7 +2,7 @@ package pageObject;
 
 import base.Config;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,16 +27,15 @@ public class login extends Config
     public  WebElement welcomeMsgLocator;
     @FindBy(how = How.XPATH, using = "//*[@id='error_message']/div/h5")
     public WebElement invalidEmailOrPasswordErrorMsgLocator;
+    @FindBy(how= How.XPATH, using = "//a[contains(text(),'Create new account')]")
+    public WebElement createNewAccountButton;
 
 
   //function
-    public void enterEmailAddress(String email){
+    public void enterEmailAddress(String email){emailLocator.sendKeys(email);
         //driver.findElement(By.name("email")).sendKeys(Email_Address); //hardcoded
-        emailLocator.sendKeys(email);
-  }
-    public void enterPassword(String pass){
-
-      passwordLocator.sendKeys(pass);
+      }
+    public void enterPassword(String pass){ passwordLocator.sendKeys(pass);
   }
     public void clickOnLoginButton(){
       loginButtonLocator.click();
@@ -52,11 +51,12 @@ public class login extends Config
 
       String act = fullText.substring(1, fullText.length()-1);
       Assert.assertEquals(act, errorMsg);
+    }
+    public void clickOnButton (String button) {
+    if (button.contains("Create new account")) {
+      createNewAccountButton.click();
+    }
 
 
-  }
-
-
-
-}
+  }}
 

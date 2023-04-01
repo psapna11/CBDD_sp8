@@ -1,52 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="15869" started-at="2023-03-15T23:49:34 EDT" finished-at="2023-03-15T23:49:50 EDT">
+  <suite started-at="2023-04-01T10:58:28 EDT" name="Surefire suite" finished-at="2023-04-01T10:58:28 EDT" duration-ms="376">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@18c1321]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@6ef888f6]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Surefire test" duration-ms="15869" started-at="2023-03-15T23:49:34 EDT" finished-at="2023-03-15T23:49:50 EDT">
+    <test started-at="2023-04-01T10:58:28 EDT" name="Surefire test" finished-at="2023-04-01T10:58:28 EDT" duration-ms="376">
       <class name="TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:TestRunner@18c1321]" name="setUpClass" is-config="true" duration-ms="489" started-at="2023-03-15T23:49:34 EDT" finished-at="2023-03-15T23:49:34 EDT">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner@6ef888f6]" started-at="2023-04-01T10:58:28 EDT" name="setUpClass" finished-at="2023-04-01T10:58:28 EDT" duration-ms="297" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1ada9581]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.core.gherkin.FeatureParserException">
+            <message>
+              <![CDATA[Failed to parse resource at: file:///C:/Users/panka/git/CBDD_sp8/src/test/java/features/signup.feature
+(3:3): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'Scenario : User should be able to create a new account'
+(4:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'Given user should be on TalentTEK homepage'
+(5:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User click on the "Create new account" button'
+(6:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter First and last name'
+(7:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter email address'
+(8:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter Password and Confirm password'
+(9:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter month under Birthdate'
+(10:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter date under Birthdate'
+(11:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter year under Birthdate'
+(12:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User select Gender as "female"'
+(13:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User select to agree term and condition checkbox']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///C:/Users/panka/git/CBDD_sp8/src/test/java/features/signup.feature
+(3:3): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'Scenario : User should be able to create a new account'
+(4:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'Given user should be on TalentTEK homepage'
+(5:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User click on the "Create new account" button'
+(6:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter First and last name'
+(7:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter email address'
+(8:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter Password and Confirm password'
+(9:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter month under Birthdate'
+(10:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter date under Birthdate'
+(11:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User enter year under Birthdate'
+(12:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User select Gender as "female"'
+(13:5): expected: #TagLine, #RuleLine, #Comment, #Empty, got 'And User select to agree term and condition checkbox'
+at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:56)
+at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:46)
+at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
+at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
+at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:75)
+at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:60)
+at java.base/java.nio.file.Files.walkFileTree(Files.java:2811)
+at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:53)
+at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
+at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
+at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
+at io.cucumber.core.runtime.FeaturePathFeatureSupplier.loadFeatures(FeaturePathFeatureSupplier.java:62)
+at io.cucumber.core.runtime.FeaturePathFeatureSupplier.get(FeaturePathFeatureSupplier.java:45)
+at io.cucumber.testng.TestNGCucumberRunner.<init>(TestNGCucumberRunner.java:122)
+at io.cucumber.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:27)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.core.gherkin.FeatureParserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@18c1321]" name="runScenario" duration-ms="10834" started-at="2023-03-15T23:49:34 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-15T23:49:45 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["user should able to login with valid email and valid password"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Login Feature]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@18c1321]" name="runScenario" duration-ms="4275" started-at="2023-03-15T23:49:45 EDT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-15T23:49:50 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["user should not able to login with valid email and invalid password"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Login Feature]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:TestRunner@18c1321]" name="tearDownClass" is-config="true" duration-ms="217" started-at="2023-03-15T23:49:50 EDT" finished-at="2023-03-15T23:49:50 EDT">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner@6ef888f6]" started-at="2023-04-01T10:58:28 EDT" name="tearDownClass" finished-at="2023-04-01T10:58:28 EDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

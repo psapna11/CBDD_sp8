@@ -47,17 +47,28 @@ public class loginSteps extends Config {
     }
 
 
-
-
     @And("user enter invalid email address")
     public void userEnterInvalidEmailAddress() {
         lp.enterEmailAddress("invalidEmail");
 
     }
-
+    @And("login")
+    public void login() {
+        lp.enterEmailAddress(Email_Address);
+        lp.enterPassword(Password);
+        lp.clickOnLoginButton();
+    }
 
     @Then("user should be able see {string}")
     public void userShouldBeAbleSee(String errorMsg) {
         lp.verifyErrorMessageForInvalidEmailOrPassword(errorMsg);
+    }
+
+    @And("User click on the {string} button")
+    public void userClickOnTheButton(String buttonText) {
+        //driver.findElement(By.xpath("//*[@id='wrap']/div/div/div/a")).click();
+        //a[contains(text(),'Create new account')]
+        driver.findElement(By.xpath("//a[contains(text(),'"+buttonText+"')]")).click();
+        //sp.clickOnButton(buttonText);
     }
 }

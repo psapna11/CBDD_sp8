@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CBDD_sp8" />
+        <module name="CBDDFW_JAN_2023" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="15" />
+    <bytecodeTargetLevel target="17">
+      <module name="CBDD_sp8" target="1.8" />
+      <module name="FinalCBDD_sp" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
